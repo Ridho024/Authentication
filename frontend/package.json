@@ -1,0 +1,11 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "p"
+  },
+  "author": "Ridho024",
+  "license": "ISC",
+  "description": ""
+}

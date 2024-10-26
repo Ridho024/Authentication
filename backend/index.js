@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import session from "express-session";
 import dotenv from "dotenv";
+import UserRoutes from "./routes/UserRoutes.js"
+import ProductRoutes from "./routes/ProductRoutes.js"
+
 dotenv.config();
 
 const app = express();
@@ -25,4 +28,8 @@ app.use(
   })
 );
 
-app.listen(process.env.APP_PORT, () => console.log(`Server listening on port: ${process.env.APP_PORT}`));
+app.use(express.json())
+app.use(UserRoutes)
+app.use(ProductRoutes)
+
+app.listen(process.env.APP_PORT, () => console.log(`Server listening on port: 5000`));

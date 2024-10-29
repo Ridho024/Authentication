@@ -32,7 +32,7 @@ export const me = async (req, res) => {
     attributes: ["uuid", "name", "email", "role"],
     where: {
       uuid: req.session.userId,
-    },  
+    },
   });
 
   if (!user) return res.status(404).json({ msg: "User tidak ditemukan" });

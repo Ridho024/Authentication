@@ -4,6 +4,7 @@ import session from "express-session";
 import dotenv from "dotenv";
 import UserRoutes from "./routes/UserRoutes.js";
 import ProductRoutes from "./routes/ProductRoutes.js";
+import AuthRoutes from "./routes/AuthRoutes.js";
 import db from "./config/Database.js";
 dotenv.config();
 
@@ -31,5 +32,6 @@ app.use(express.json()); // Menerima data dengan format json
 
 app.use(UserRoutes);
 app.use(ProductRoutes);
+app.use(AuthRoutes);
 
 app.listen(process.env.APP_PORT, () => console.log(`Server listening on port: 5000`));

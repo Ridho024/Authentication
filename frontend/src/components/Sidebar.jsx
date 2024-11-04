@@ -11,7 +11,7 @@ const Sidebar = () => {
   const logout = () => {
     dispatch(LogOut());
     dispatch(reset());
-    navigate("/")
+    navigate("/");
   };
 
   return (
@@ -30,18 +30,25 @@ const Sidebar = () => {
             </NavLink>
           </li>
         </ul>
-        <p className="menu-label">Admin</p>
-        <ul className="menu-list">
-          <li>
-            <NavLink className="has-text-dark" style={{ backgroundColor: "white" }}>
-              Users
-            </NavLink>
-          </li>
-        </ul>
+        {user && user.role === "admin" && (
+          <div>
+            <p className="menu-label">Admin</p>
+            <ul className="menu-list">
+              <li>
+                <NavLink className="has-text-dark" style={{ backgroundColor: "white" }}>
+                  Users
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        )}
+
         <p className="menu-label">Settings</p>
         <ul className="menu-list">
           <li>
-            <button onClick={logout} className="button is-white">Logout</button>
+            <button onClick={logout} className="button is-white">
+              Logout
+            </button>
           </li>
         </ul>
       </aside>

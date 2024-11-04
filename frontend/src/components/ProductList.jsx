@@ -15,15 +15,15 @@ const ProductList = () => {
   };
 
   const deleteProduct = async (productID) => {
-    await axios.delete(`http://localhost:5000/${productID}`);
-    getProducts()
+    await axios.delete(`http://localhost:5000/product/${productID}`);
+    getProducts();
   };
 
   return (
     <div className="mt-4">
       <h1 className="title has-text-dark">Products</h1>
       <h2 className="subtitle has-text-dark">List of Products</h2>
-      <Link to='/products'></Link>
+      <Link to="/products/add" className="button is-primary mb-2">Add Product</Link>
       <table className="table is-striped is-fullwidth">
         <thead>
           <tr>

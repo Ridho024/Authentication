@@ -12,7 +12,7 @@ const FormEditProduct = () => {
   useEffect(() => {
     const getProductByID = async () => {
       try {
-        const response = await axios.get(`localhost:5000/product/${id}`);
+        const response = await axios.get(`http://localhost:5000/product/data/${id}`);
         setName(response.data.name);
         setPrice(response.data.price);
       } catch (error) {
@@ -22,9 +22,9 @@ const FormEditProduct = () => {
       }
     };
     getProductByID()
-  });
+  }, [id]);
 
-  const updateProduct = async () => {
+  const updateProduct = async (e) => {
     e.preventDefault();
     try {
       await axios.patch(`http://localhost:5000/product/edit/${id}`, {

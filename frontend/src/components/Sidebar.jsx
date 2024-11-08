@@ -35,7 +35,7 @@ const Sidebar = () => {
             <p className="menu-label">Admin</p>
             <ul className="menu-list">
               <li>
-                <NavLink className="has-text-dark" style={{ backgroundColor: "white" }}>
+                <NavLink to={"/users"} className="has-text-dark" style={{ backgroundColor: "white" }}>
                   Users
                 </NavLink>
               </li>
